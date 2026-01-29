@@ -90,6 +90,7 @@ if ( file_exists( $autoload_file ) ) {
 function spectra_init() {
 	( \Spectra\BlockManager::instance() )->init();
 	( \Spectra\AssetLoader::instance() )->init();
+	( \Spectra\ExtensionManager::instance() )->init();
 }
 add_action( 'plugins_loaded', 'spectra_init' );
 
