@@ -21,10 +21,6 @@ Built from the ground up using modern WordPress architecture including the Inter
 
 * **Container** - Create flexible layouts with flexbox and grid-powered container block. Perfect for building sections, rows, and complex responsive layouts.
 
-* **Buttons** - Add grouped call-to-action buttons with full customization options including colors, typography, spacing, and hover effects.
-
-* **Button** - Individual button block with advanced styling options, icon support, and link controls.
-
 * **Separator** - Add modern separators and dividers to your page content with multiple styles including solid, dotted, dashed, and decorative patterns.
 
 * **Text** - Advanced text block with comprehensive typography controls, drop caps, text shadows, and hover effects.
@@ -81,8 +77,6 @@ You can report bugs or suggest features through the WordPress.org support forums
 ### 1.0.0 ###
 * Initial release
 * Container block with flexbox and grid layouts
-* Buttons block for grouped button layouts
-* Button block with icon support and hover effects
 * Separator block with multiple customizable styles
 * Text block with advanced typography controls
 
