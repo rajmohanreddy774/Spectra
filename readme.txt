@@ -1,6 +1,6 @@
 === Spectra - WordPress Gutenberg Blocks ===
 Contributors: brainstormforce
-Donate link: https://wpspectra.com/
+Donate link: https://www.paypal.me/BrainstormForce
 Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 6.6
 Tested up to: 6.7
@@ -75,13 +75,6 @@ For support, please visit our website at [wpspectra.com](https://wpspectra.com/)
 = Where can I report bugs or suggest features? =
 
 You can report bugs or suggest features through the WordPress.org support forums or by visiting [wpspectra.com](https://wpspectra.com/).
-
-== Screenshots ==
-
-1. Container block with flexible layout options
-2. Buttons block for call-to-action elements
-3. Separator block with various styles
-4. Text block with advanced typography
 
 == Changelog ==
 
