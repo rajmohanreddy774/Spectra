@@ -17,6 +17,44 @@ defined( 'ABSPATH' ) || exit;
 class Core {
 
 	/**
+	 * Store Json variable for icons.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var array
+	 */
+	public static $icon_json = null;
+
+	/**
+	 * Get Json Data for FontAwesome icons.
+	 *
+	 * For the lightweight version, this returns an empty array.
+	 * Icons can still be used via raw SVG input.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	public static function backend_load_font_awesome_icons() {
+		// Return cached icons if available.
+		if ( null !== self::$icon_json ) {
+			return self::$icon_json;
+		}
+
+		// For lightweight plugin, return empty array.
+		// Users can use raw SVG icons instead.
+		self::$icon_json = array();
+
+		/**
+		 * Filter to add custom icon sets.
+		 *
+		 * @since 1.0.0
+		 * @param array $icon_json The icon data array.
+		 */
+		return apply_filters( 'spectra_icon_chunks', self::$icon_json );
+	}
+
+	/**
 	 * Concatenate non-empty string values from an array into a single string.
 	 *
 	 * Based on the type, the returned string will differ.
