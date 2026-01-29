@@ -47,7 +47,7 @@ auth.json
 artifact/
 
 # Spectra v3 generated assets.
-spectra-v3/build/
+Spectra/build/
 
 # Environment variables
 .env
