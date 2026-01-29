@@ -57,23 +57,23 @@ svg {
 	fill: #fff;
 }
 
-.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active) .spectra-block-icon--colored path,
-.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active) .spectra-block-icon--colored rect,
-.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active) .spectra-block-icon--colored circle {
+.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active, .is-selected ) .spectra-block-icon--colored path,
+.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active, .is-selected ) .spectra-block-icon--colored rect,
+.components-button:hover:not(:disabled,[aria-disabled="true"], .is-active, .is-selected ) .spectra-block-icon--colored circle {
 	color: var(--wp-admin-theme-color) !important;
 }
 
 .components-dropdown-menu__menu-item.is-active .spectra-block-icon--colored path:last-child,
-.components-autocomplete__popover .components-popover__content .spectra-block-icon--colored path:last-child {
-	fill: #000;
+.components-autocomplete__popover .components-popover__content .is-selected .spectra-block-icon--colored path:last-child {
+	fill: #2271b1;
 }
 
 .is-selected .block-editor-list-view-block-select-button .spectra-block-icon--colored path:last-child {
 	fill: #2271b1;
 }
 
-.components-accessible-toolbar .components-button.is-pressed path:last-child,
-.components-toolbar .components-button.is-pressed path:last-child {
+.components-accessible-toolbar .components-button.is-pressed .spectra-block-icon--colored path:last-child,
+.components-toolbar .components-button.is-pressed .spectra-block-icon--colored path:last-child {
 	fill: #000;
 }
 
