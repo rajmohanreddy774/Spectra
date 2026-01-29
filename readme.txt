@@ -1,5 +1,5 @@
 === Spectra - WordPress Gutenberg Blocks ===
-Contributors: suspended
+Contributors: brainstormforce
 Donate link: https://wpspectra.com/
 Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 6.6
