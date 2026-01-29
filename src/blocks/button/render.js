@@ -238,7 +238,7 @@ const Render = ( props ) => {
 		}
 		return (
 			<RichText
-				placeholder={ __( 'Add text…', 'ultimate-addons-for-gutenberg' ) }
+				placeholder={ __( 'Add text…', 'spectra' ) }
 				value={ text }
 				tagName="div"
 				onChange={ ( value ) => setAttributes( { text: value } ) }

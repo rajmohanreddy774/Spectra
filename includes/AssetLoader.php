@@ -28,9 +28,37 @@ class AssetLoader {
 	 * @return void
 	 */
 	public function init() {
+		// Register common block styles early (before blocks are registered).
+		add_action( 'init', array( $this, 'register_common_block_styles' ), 5 );
+
 		// Enqueue the common style assets on the frontend and editor.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_common_style_assets' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_style_assets' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
+
+		// Enqueue block assets on frontend when blocks are used.
+		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
+	}
+
+	/**
+	 * Register common block styles that blocks depend on.
+	 *
+	 * This must run before blocks are registered so the style handle is available.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function register_common_block_styles() {
+		$common_css = SPECTRA_DIR . 'build/styles/blocks/common.css';
+
+		if ( file_exists( $common_css ) ) {
+			wp_register_style(
+				'spectra-blocks-common',
+				plugins_url( 'build/styles/blocks/common.css', SPECTRA_FILE ),
+				array(),
+				SPECTRA_VER
+			);
+		}
 	}
 
 	/**
@@ -40,17 +68,27 @@ class AssetLoader {
 	 *
 	 * @return void
 	 */
-	public function enqueue_common_style_assets() {
+	public function register_style_assets() {
 		$css_path  = SPECTRA_DIR . 'build/styles/';
 		$css_files = glob( $css_path . '**/*.css' ) ?? array();
 
 		foreach ( $css_files as $css_file ) {
+			// Skip RTL files - WordPress handles these automatically.
+			if ( strpos( $css_file, '-rtl.css' ) !== false ) {
+				continue;
+			}
+
 			// Get the parent directory name relative to built styles directory.
 			$relative_path = str_replace( $css_path, '', $css_file );
 			$style_type    = dirname( $relative_path );
 
 			// Extract the file name without the extension and prepend with 'spectra-'.
 			$handle = 'spectra-' . trim( $style_type, '/' ) . '-' . basename( $css_file, '.css' );
+
+			// Skip if already registered (e.g., spectra-blocks-common).
+			if ( wp_style_is( $handle, 'registered' ) ) {
+				continue;
+			}
 
 			// Register the style.
 			wp_register_style(
@@ -91,7 +129,24 @@ class AssetLoader {
 		// Enqueue the common editor styles.
 		wp_enqueue_style( $handle );
 
-		// Enqueue the common assets.
-		$this->enqueue_common_style_assets();
+		// Register style assets in editor too.
+		$this->register_style_assets();
+	}
+
+	/**
+	 * Enqueue block assets on frontend when blocks are used.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function enqueue_block_assets() {
+		// Only enqueue on frontend, not in editor.
+		if ( is_admin() ) {
+			return;
+		}
+
+		// The block styles are automatically enqueued by WordPress when blocks are used.
+		// This hook is here for any additional frontend assets that may be needed.
 	}
 }

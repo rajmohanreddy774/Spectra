@@ -105,7 +105,7 @@ const ModalContainer = ( props ) => {
 			return (
 				<div className="uagb-ip-icons icon-not-found">
 					<div className="uagb-icon-not-available">
-						<span>{ __( 'No Icons Found', 'ultimate-addons-for-gutenberg' ) }</span>
+						<span>{ __( 'No Icons Found', 'spectra' ) }</span>
 					</div>
 				</div>
 			);
@@ -181,7 +181,7 @@ const ModalContainer = ( props ) => {
 				className={ 'all' === categoryListName ? 'selected' : null }
 				onClick={ () => clickToCategoryList( 'all' ) }
 			>
-				{ __( 'All Icons', 'ultimate-addons-for-gutenberg' ) }
+				{ __( 'All Icons', 'spectra' ) }
 			</div>
 			{ iconCategoryList.map( ( cateValue, key ) => (
 				<div
@@ -197,7 +197,7 @@ const ModalContainer = ( props ) => {
 				className={ 'no-category' === categoryListName ? 'selected' : null }
 				onClick={ () => clickToCategoryList( 'no-category' ) }
 			>
-				{ __( 'Other', 'ultimate-addons-for-gutenberg' ) }
+				{ __( 'Other', 'spectra' ) }
 			</div>
 		</div>
 	);
@@ -209,7 +209,7 @@ const ModalContainer = ( props ) => {
 			onRequestClose={ closeModal }
 			overlayClassName="uagb-ip-modal-wrapper-overlay"
 			shouldCloseOnClickOutside={ false }
-			closeButtonLabel={ __( 'Close', 'ultimate-addons-for-gutenberg' ) }
+			closeButtonLabel={ __( 'Close', 'spectra' ) }
 		>
 			{ /* Header  */ }
 			<HeaderContainer
@@ -243,7 +243,7 @@ const ModalContainer = ( props ) => {
 							: null
 					}
 				>
-					{ __( 'Insert Icon', 'ultimate-addons-for-gutenberg' ) }
+					{ __( 'Insert Icon', 'spectra' ) }
 				</button>
 			</section>
 		</Modal>

@@ -52,10 +52,10 @@ const BlockControlLink = ( props ) => {
 						<LinkControl
 							showInitialSuggestions
 							settings={ [
-								{ id: 'opensInNewTab', title: __( 'Open in a new tab', 'ultimate-addons-for-gutenberg' ) },
-								{ id: 'noFollow', title: __( 'Mark as nofollow', 'ultimate-addons-for-gutenberg' ) },
-								{ id: 'noReferer', title: __( 'Mark as noreferer', 'ultimate-addons-for-gutenberg' ) },
-								{ id: 'noOpener', title: __( 'Mark as noopener', 'ultimate-addons-for-gutenberg' ) },
+								{ id: 'opensInNewTab', title: __( 'Open in a new tab', 'spectra' ) },
+								{ id: 'noFollow', title: __( 'Mark as nofollow', 'spectra' ) },
+								{ id: 'noReferer', title: __( 'Mark as noreferer', 'spectra' ) },
+								{ id: 'noOpener', title: __( 'Mark as noopener', 'spectra' ) },
 							] }
 							value={ {
 								url: url?.value,

@@ -47,7 +47,7 @@ const PickerButton = memo( ( { onClick, onKeyDown, className, ariaLabel, childre
  */
 const RemoveButton = memo( ( { onRemove, type = 'icon' } ) => {
 	// Simple string comparison - no memoization needed
-	const ariaLabel = type === 'SVG' ? __( 'Remove SVG', 'ultimate-addons-for-gutenberg' ) : __( 'Remove icon', 'ultimate-addons-for-gutenberg' );
+	const ariaLabel = type === 'SVG' ? __( 'Remove SVG', 'spectra' ) : __( 'Remove icon', 'spectra' );
 	
 	return (
 		<button
@@ -67,9 +67,9 @@ const SelectButton = memo( ( { onClick, isAvailable, type = 'icon' } ) => {
 	// Simple conditional logic - no memoization needed for string operations
 	const getText = () => {
 		if ( type === 'SVG' ) {
-			return isAvailable ? __( 'Change SVG', 'ultimate-addons-for-gutenberg' ) : __( 'Choose SVG', 'ultimate-addons-for-gutenberg' );
+			return isAvailable ? __( 'Change SVG', 'spectra' ) : __( 'Choose SVG', 'spectra' );
 		}
-		return isAvailable ? __( 'Change Icon', 'ultimate-addons-for-gutenberg' ) : __( 'Choose Icon', 'ultimate-addons-for-gutenberg' );
+		return isAvailable ? __( 'Change Icon', 'spectra' ) : __( 'Choose Icon', 'spectra' );
 	};
 	
 	const buttonText = getText();
@@ -118,7 +118,7 @@ const IconPickerSetting = memo( ( props ) => {
 			{ /* Source type toggle when image is enabled */ }
 			{ enableImage && (
 				<ToggleGroupControl
-					label={ __( 'Source Type', 'ultimate-addons-for-gutenberg' ) }
+					label={ __( 'Source Type', 'spectra' ) }
 					value={ currentSourceType }
 					onChange={ handleSourceTypeChange }
 					isBlock
@@ -126,11 +126,11 @@ const IconPickerSetting = memo( ( props ) => {
 				>
 					<ToggleGroupControlOption
 						value="icon"
-						label={ __( 'Icon Library', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Icon Library', 'spectra' ) }
 					/>
 					<ToggleGroupControlOption
 						value="image"
-						label={ __( 'Upload SVG', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Upload SVG', 'spectra' ) }
 					/>
 				</ToggleGroupControl>
 			) }
@@ -143,7 +143,7 @@ const IconPickerSetting = memo( ( props ) => {
 						<PickerButton
 							className="spectra-icon-picker__control"
 							onClick={ openModal }
-							ariaLabel={ isIconAvailable ? __( 'Change icon', 'ultimate-addons-for-gutenberg' ) : __( 'Choose icon', 'ultimate-addons-for-gutenberg' ) }
+							ariaLabel={ isIconAvailable ? __( 'Change icon', 'spectra' ) : __( 'Choose icon', 'spectra' ) }
 						>
 							{ isIconAvailable ? (
 								<div className="spectra-icon-picker__control--value">
@@ -172,7 +172,7 @@ const IconPickerSetting = memo( ( props ) => {
 										<PickerButton
 											className="spectra-icon-picker__control"
 											onClick={ open }
-											ariaLabel={ isSvgAvailable ? __( 'Change SVG', 'ultimate-addons-for-gutenberg' ) : __( 'Choose SVG', 'ultimate-addons-for-gutenberg' ) }
+											ariaLabel={ isSvgAvailable ? __( 'Change SVG', 'spectra' ) : __( 'Choose SVG', 'spectra' ) }
 										>
 											{ isSvgAvailable ? (
 												<div className="spectra-icon-picker__control--value spectra-icon-picker__control--image">

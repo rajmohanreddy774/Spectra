@@ -26,26 +26,10 @@ module.exports = [
 			// Get all style files.
 			const styleFiles = glob.sync( './src/styles/**/*.scss' );
 
-			// Get all extension files (JS and SCSS).
-			const extensionFiles = glob.sync(
-				'./src/extensions/**/*.{js,scss}'
-			);
-
 			// For each file, just get the directory and file name, and add it to the entries.
 			styleFiles.forEach( ( file ) => {
 				const name = file.replace( './src/styles/', '' ).replace( '.scss', '' );
 				entries[ `styles/${ name }` ] = path.resolve( __dirname, file );
-			} );
-
-			// Add extension files
-			extensionFiles.forEach( ( file ) => {
-				const name = file
-					.replace( './src/extensions/', '' )
-					.replace( /\.(js|scss)$/, '' );
-				entries[ `extensions/${ name }` ] = path.resolve(
-					__dirname,
-					file
-				);
 			} );
 
 			// Return the modified entries.

@@ -44,7 +44,7 @@ const BlockSettings = memo( ( props ) => {
 		<>
 			<InspectorControls group="settings">
 				<ToolsPanel
-					label={ __( 'Separator', 'ultimate-addons-for-gutenberg' ) }
+					label={ __( 'Separator', 'spectra' ) }
 					resetAll={ () => {
 						setAttributes( {
 							separatorStyle: undefined,
@@ -56,55 +56,55 @@ const BlockSettings = memo( ( props ) => {
 				>
 					<ToolsPanelItem
 						hasValue={ () => !! separatorStyle }
-						label={ __( 'Style', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Style', 'spectra' ) }
 						onDeselect={ () => setAttributes( { separatorStyle: undefined } ) }
 						isShownByDefault
 						panelId={ clientId }
 					>
 						<SelectControl
-							label={ __( 'Style', 'ultimate-addons-for-gutenberg' ) }
+							label={ __( 'Style', 'spectra' ) }
 							value={ separatorStyle || 'solid' }
 							onChange={ ( value ) => setAttributes( { separatorStyle: value } ) }
 							options={ [
 								{
 									value: 'solid',
-									label: __( 'Solid', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Solid', 'spectra' ),
 								},
 								{
 									value: 'dotted',
-									label: __( 'Dotted', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Dotted', 'spectra' ),
 								},
 								{
 									value: 'dashed',
-									label: __( 'Dashed', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Dashed', 'spectra' ),
 								},
 								{
 									value: 'double',
-									label: __( 'Double', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Double', 'spectra' ),
 								},
 								{
 									value: 'rectangles',
-									label: __( 'Rectangles', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Rectangles', 'spectra' ),
 								},
 								{
 									value: 'parallelogram',
-									label: __( 'Parallelogram', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Parallelogram', 'spectra' ),
 								},
 								{
 									value: 'slash',
-									label: __( 'Slash', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Slash', 'spectra' ),
 								},
 								{
 									value: 'leaves',
-									label: __( 'Leaves', 'ultimate-addons-for-gutenberg' ),
+									label: __( 'Leaves', 'spectra' ),
 								},
 							] }
-							help={ separatorStyle !== 'solid' && separatorStyle !== 'dotted' && separatorStyle !== 'dashed' && separatorStyle !== 'double' ? __( 'Note: Please set Separator Height for proper thickness.', 'ultimate-addons-for-gutenberg' ) : '' }
+							help={ separatorStyle !== 'solid' && separatorStyle !== 'dotted' && separatorStyle !== 'dashed' && separatorStyle !== 'double' ? __( 'Note: Please set Separator Height for proper thickness.', 'spectra' ) : '' }
 						/>
 					</ToolsPanelItem>
 					<ToolsPanelItem
 						hasValue={ () => !! separatorAlign }
-						label={ __( 'Alignment', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Alignment', 'spectra' ) }
 						onDeselect={ () => setAttributes( { separatorAlign: undefined } ) }
 						isShownByDefault
 						panelId={ clientId }
@@ -112,14 +112,14 @@ const BlockSettings = memo( ( props ) => {
 						<ToggleGroupControl
 							__nextHasNoMarginBottom
 							__next40pxDefaultSize
-							label={ __( 'Alignment', 'ultimate-addons-for-gutenberg' ) }
+							label={ __( 'Alignment', 'spectra' ) }
 							value={ separatorAlign || 'center' }
 							onChange={ ( value ) => setAttributes( { separatorAlign: value } ) }
 							isBlock
 						>
-							<ToggleGroupControlOption value="left" label={ __( 'Left', 'ultimate-addons-for-gutenberg' ) } />
-							<ToggleGroupControlOption value="center" label={ __( 'Center', 'ultimate-addons-for-gutenberg' ) } />
-							<ToggleGroupControlOption value="right" label={ __( 'Right', 'ultimate-addons-for-gutenberg' ) } />
+							<ToggleGroupControlOption value="left" label={ __( 'Left', 'spectra' ) } />
+							<ToggleGroupControlOption value="center" label={ __( 'Center', 'spectra' ) } />
+							<ToggleGroupControlOption value="right" label={ __( 'Right', 'spectra' ) } />
 						</ToggleGroupControl>
 					</ToolsPanelItem>
 
@@ -160,7 +160,7 @@ const DimensionSettings = memo( ( props ) => {
 		<InspectorControls group="dimensions">
 			<ToolsPanelItem
 				hasValue={ () => !! separatorWidth }
-				label={ __( 'Separator Width', 'ultimate-addons-for-gutenberg' ) }
+				label={ __( 'Separator Width', 'spectra' ) }
 				onDeselect={ () => setAttributes( { separatorWidth: undefined } ) }
 				resetAllFilter={ () => ( {
 					separatorWidth: undefined,
@@ -170,7 +170,7 @@ const DimensionSettings = memo( ( props ) => {
 			>
 				<UnitControl
 					__next40pxDefaultSize
-					label={ __( 'Separator Width', 'ultimate-addons-for-gutenberg' ) }
+					label={ __( 'Separator Width', 'spectra' ) }
 					labelPosition="top"
 					value={ separatorWidth }
 					min={ 0 }
@@ -180,7 +180,7 @@ const DimensionSettings = memo( ( props ) => {
 			</ToolsPanelItem>
 			<ToolsPanelItem
 				hasValue={ () => !!separatorHeight }
-				label={ __( 'Separator Height', 'ultimate-addons-for-gutenberg' ) }
+				label={ __( 'Separator Height', 'spectra' ) }
 				onDeselect={ () => setAttributes( { separatorHeight: undefined } ) }
 				resetAllFilter={ () => ( {
 					separatorHeight: undefined,
@@ -190,7 +190,7 @@ const DimensionSettings = memo( ( props ) => {
 			>
 				<UnitControl
 					__next40pxDefaultSize
-					label={ __( 'Separator Height', 'ultimate-addons-for-gutenberg' ) }
+					label={ __( 'Separator Height', 'spectra' ) }
 					labelPosition="top"
 					value={ separatorHeight }
 					min={ 0 }
@@ -201,7 +201,7 @@ const DimensionSettings = memo( ( props ) => {
 			{ ( separatorStyle === 'rectangles' || separatorStyle === 'parallelogram' || separatorStyle === 'slash' || separatorStyle === 'leaves' ) && (
 				<ToolsPanelItem
 					hasValue={ () => !! separatorSize }
-					label={ __( 'Separator Size', 'ultimate-addons-for-gutenberg' ) }
+					label={ __( 'Separator Size', 'spectra' ) }
 					onDeselect={ () => setAttributes( { separatorSize: undefined } ) }
 					resetAllFilter={ () => ( {
 						separatorSize: undefined,
@@ -211,7 +211,7 @@ const DimensionSettings = memo( ( props ) => {
 				>
 					<UnitControl
 						__next40pxDefaultSize
-						label={ __( 'Separator Size', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Separator Size', 'spectra' ) }
 						labelPosition="top"
 						value={ separatorSize }
 						min={ 0 }
@@ -247,7 +247,7 @@ const ColorSettings = memo( ( props ) => {
 			settings={ [
 				{
 					colorValue: separatorColor,
-					label: __( 'Separator Color', 'ultimate-addons-for-gutenberg' ),
+					label: __( 'Separator Color', 'spectra' ),
 					onColorChange: ( value ) => setAttributes( { separatorColor: value } ),
 					resetAllFilter: () => setAttributes( { separatorColor: undefined } ),
 				},

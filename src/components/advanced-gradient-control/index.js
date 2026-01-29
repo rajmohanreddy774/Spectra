@@ -234,7 +234,7 @@ const GradientDropdown = memo(
 						{ hasValue() && (
 							<Button
 								__next40pxDefaultSize
-								label={ __( 'Reset', 'ultimate-addons-for-gutenberg' ) }
+								label={ __( 'Reset', 'spectra' ) }
 								className="block-editor-panel-color-gradient-settings__reset"
 								size="small"
 								icon={ resetIcon }
@@ -255,7 +255,7 @@ const GradientDropdown = memo(
 							<VStack spacing={ 4 }>
 								{ showToggle && (
 									<ToggleControl
-										label={ __( 'Use Advanced Gradient', 'ultimate-addons-for-gutenberg' ) }
+										label={ __( 'Use Advanced Gradient', 'spectra' ) }
 										checked={ enableAdvBg }
 										onChange={ handleToggleAdvBg }
 									/>
@@ -267,7 +267,7 @@ const GradientDropdown = memo(
 											onColorChange={ ( color ) => {
 												hook.setColorAtIndex( 0, color );
 											} }
-											colorLabel={ __( 'Color 1', 'ultimate-addons-for-gutenberg' ) }
+											colorLabel={ __( 'Color 1', 'spectra' ) }
 											colorGroups={ colorGroups }
 											popoverProps={ popoverProps }
 										/>
@@ -276,27 +276,27 @@ const GradientDropdown = memo(
 											onColorChange={ ( color ) => {
 												hook.setColorAtIndex( 1, color );
 											} }
-											colorLabel={ __( 'Color 2', 'ultimate-addons-for-gutenberg' ) }
+											colorLabel={ __( 'Color 2', 'spectra' ) }
 											colorGroups={ colorGroups }
 											popoverProps={ popoverProps }
 										/>
 										<ToggleGroupControl
-											label={ __( 'Type', 'ultimate-addons-for-gutenberg' ) }
+											label={ __( 'Type', 'spectra' ) }
 											value={ hook.parsed?.type || 'linear' }
 											onChange={ hook.setType }
 											isBlock
 										>
 											<ToggleGroupControlOption
 												value="linear"
-												label={ __( 'Linear', 'ultimate-addons-for-gutenberg' ) }
+												label={ __( 'Linear', 'spectra' ) }
 											/>
 											<ToggleGroupControlOption
 												value="radial"
-												label={ __( 'Radial', 'ultimate-addons-for-gutenberg' ) }
+												label={ __( 'Radial', 'spectra' ) }
 											/>
 										</ToggleGroupControl>
 										<RangeControl
-											label={ __( 'Location 1', 'ultimate-addons-for-gutenberg' ) }
+											label={ __( 'Location 1', 'spectra' ) }
 											value={ hook.parsed?.colors?.[ 0 ]?.position ?? 0 }
 											onChange={ ( position ) => hook.setPositionAtIndex( 0, position ) }
 											min={ -100 }
@@ -305,7 +305,7 @@ const GradientDropdown = memo(
 											__nextHasNoMarginBottom
 										/>
 										<RangeControl
-											label={ __( 'Location 2', 'ultimate-addons-for-gutenberg' ) }
+											label={ __( 'Location 2', 'spectra' ) }
 											value={ hook.parsed?.colors?.[ 1 ]?.position ?? 100 }
 											onChange={ ( position ) => hook.setPositionAtIndex( 1, position ) }
 											min={ -100 }
@@ -315,7 +315,7 @@ const GradientDropdown = memo(
 										/>
 										{ ( hook.parsed?.type === 'linear' || ! hook.parsed ) && (
 											<RangeControl
-												label={ __( 'Angle', 'ultimate-addons-for-gutenberg' ) }
+												label={ __( 'Angle', 'spectra' ) }
 												value={ hook.parsed?.angle ?? 0 }
 												onChange={ hook.setAngle }
 												min={ 0 }
@@ -518,7 +518,7 @@ const AdvancedGradientControlsGroup = memo(
 		attributes,
 		gradients,
 		enableAttr = 'enableAdvGradients',
-		enableLabel = __( 'Enable Advanced Gradients', 'ultimate-addons-for-gutenberg' ),
+		enableLabel = __( 'Enable Advanced Gradients', 'spectra' ),
 		helpText = '',
 		defaultGradient = 'linear-gradient(0deg, #06558a 0%, #0063A1 100%)',
 		showGlobalToggle = true,
@@ -565,7 +565,7 @@ const AdvancedGradientControlsGroup = memo(
 				{ showGlobalToggle && (
 					<ToolsPanelItem
 						hasValue={ () => !! enableAdvGradients }
-						label={ __( 'Advanced Gradients', 'ultimate-addons-for-gutenberg' ) }
+						label={ __( 'Advanced Gradients', 'spectra' ) }
 						onDeselect={ () => setAttributes( { [ enableAttr ]: false } ) }
 						resetAllFilter={ () => ( { [ enableAttr ]: false } ) }
 						isShownByDefault

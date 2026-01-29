@@ -1,8 +1,8 @@
 {
-	"name": "spectra-v3",
-	"version": "3.0.0",
-	"description": "An interactive block with the Interactivity API.",
-	"author": "The WordPress Contributors",
+	"name": "spectra",
+	"version": "1.0.0",
+	"description": "Spectra provides powerful Gutenberg blocks to build beautiful websites faster.",
+	"author": "Brainstorm Force",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
@@ -27,10 +27,8 @@
 		"@wordpress/element": "^6.17.0",
 		"@wordpress/interactivity": "^6.17.0",
 		"@wordpress/keycodes": "^4.17.0",
-		"countup.js": "^2.9.0",
 		"html-react-parser": "^5.2.5",
-		"react-virtualized": "^9.22.6",
-		"swiper": "^11.2.4"
+		"react-virtualized": "^9.22.6"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.10.0",

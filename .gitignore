@@ -10,7 +10,7 @@ node_modules/
 # map files
 *.map
 
-# Skip package file from versoning
+# Skip package file from versioning
 *.zip
 
 # ignore PHPCS report files
@@ -22,12 +22,6 @@ phpcs-full.log
 
 # Exclude composer's directories
 vendor/
-ultimate-addons-for-gutenberg.zip
-
-# Exclude webpack files.
-# config/webpack.config.dev.js
-# config/webpack.config.prod.js
-# .stylelintrc
 
 # Auth
 auth.json
@@ -46,9 +40,5 @@ auth.json
 # Artifact
 artifact/
 
-# Spectra v3 generated assets.
-Spectra/build/
-
-# Environment variables
-.env
-tests/e2e/.env
+# Build directory (generated)
+build/
