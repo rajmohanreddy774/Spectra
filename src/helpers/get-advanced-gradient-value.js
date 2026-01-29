@@ -16,23 +16,3 @@ export const getAdvancedGradientValue = ( enableAdvBg, advValue, basicValue, ena
 	return basicValue;
 };
 
-/**
- * Get advanced gradient attributes for block.json
- *
- * @param {string} baseAttrName Base attribute name (e.g., 'backgroundGradient')
- * @return {Object} Attributes object for block.json
- */
-export const getAdvancedGradientAttributes = ( baseAttrName ) => {
-	const advancedAttrName = `advanced${ baseAttrName.charAt( 0 ).toUpperCase() + baseAttrName.slice( 1 ) }`;
-	const useAdvancedAttrName = `useAdvanced${ baseAttrName.charAt( 0 ).toUpperCase() + baseAttrName.slice( 1 ) }`;
-
-	return {
-		[ useAdvancedAttrName ]: {
-			type: 'boolean',
-			default: false,
-		},
-		[ advancedAttrName ]: {
-			type: 'string',
-		},
-	};
-};

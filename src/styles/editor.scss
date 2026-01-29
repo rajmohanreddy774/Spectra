@@ -7,9 +7,6 @@ $hover-blue: #164a73;
 $bg-light: #f4f4f4;
 $text-dark: #333;
 
-// Extension styles.
-@import "extensions/z-index";
-
 svg {
 	// Colored block icons.
 	&.spectra-block-icon--colored {

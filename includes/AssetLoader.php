@@ -131,6 +131,79 @@ class AssetLoader {
 
 		// Register style assets in editor too.
 		$this->register_style_assets();
+
+		// Enqueue component styles needed in the editor.
+		$this->enqueue_editor_component_styles();
+
+		// Localize script data for block editor.
+		$this->localize_editor_data();
+	}
+
+	/**
+	 * Enqueue component styles needed in the block editor.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	private function enqueue_editor_component_styles() {
+		$components_dir = SPECTRA_DIR . 'build/styles/components/';
+
+		if ( ! is_dir( $components_dir ) ) {
+			return;
+		}
+
+		$component_styles = glob( $components_dir . '*.css' );
+
+		if ( empty( $component_styles ) ) {
+			return;
+		}
+
+		foreach ( $component_styles as $css_file ) {
+			// Skip RTL files - WordPress handles these automatically.
+			if ( strpos( $css_file, '-rtl.css' ) !== false ) {
+				continue;
+			}
+
+			$filename = basename( $css_file, '.css' );
+			$handle   = 'spectra-components-' . $filename;
+
+			// Register and enqueue the component style.
+			wp_register_style(
+				$handle,
+				plugins_url( 'build/styles/components/' . basename( $css_file ), SPECTRA_FILE ),
+				array(),
+				filemtime( $css_file )
+			);
+
+			wp_enqueue_style( $handle );
+		}
+	}
+
+	/**
+	 * Localize script data for the block editor.
+	 *
+	 * Provides necessary data for block components like variation picker.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	private function localize_editor_data() {
+		// Get a handle that's already enqueued in the editor.
+		// We'll use wp-blocks as it's a core dependency.
+		$handle = 'wp-blocks';
+
+		// Localize the script data.
+		wp_localize_script(
+			$handle,
+			'spectra_blocks_info',
+			array(
+				'spectra_url' => SPECTRA_URL,
+				'version'     => SPECTRA_VER,
+				'is_rtl'      => is_rtl(),
+			)
+		);
 	}
 
 	/**

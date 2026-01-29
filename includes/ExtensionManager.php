@@ -122,11 +122,39 @@ class ExtensionManager {
 		);
 		wp_set_script_translations( $handle, 'spectra', SPECTRA_DIR . 'languages' );
 
+		// Enqueue extension styles if they exist.
+		$this->enqueue_extension_styles( $folder_name );
+
 		/**
 		 * Fires after enqueuing the editor assets for the given extension.
 		 *
 		 * @since 1.0.0
 		 */
 		do_action( 'spectra_extensions_editor_assets', $folder_name, $asset_file );
+	}
+
+	/**
+	 * Enqueues styles for a given extension from the build/styles/extensions directory.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $folder_name The extension folder name.
+	 * @return void
+	 */
+	private function enqueue_extension_styles( $folder_name ) {
+		$style_path = SPECTRA_DIR . "build/styles/extensions/{$folder_name}.css";
+
+		if ( ! file_exists( $style_path ) ) {
+			return;
+		}
+
+		$handle = "spectra-extension-{$folder_name}-style";
+
+		wp_enqueue_style(
+			$handle,
+			SPECTRA_URL . "build/styles/extensions/{$folder_name}.css",
+			array(),
+			filemtime( $style_path )
+		);
 	}
 }

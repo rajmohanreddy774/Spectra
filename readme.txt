@@ -1,19 +1,19 @@
-=== Spectra - WordPress Gutenberg Blocks ===
+=== Spectra ===
 Contributors: brainstormforce
 Donate link: https://www.paypal.me/BrainstormForce
-Tags: gutenberg, blocks, gutenberg blocks, editor, block
+Tags: blocks, block editor, editor, page builder, starter templates
 Requires at least: 6.6
-Tested up to: 6.7
-Stable tag: 1.0.0
 Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Spectra extends the WordPress block editor with powerful, modern Gutenberg blocks built on the Interactivity API.
+Spectra extends the block editor with powerful, modern blocks built on the Interactivity API.
 
 == Description ==
 
-**Spectra** is the next generation of Gutenberg blocks from the team behind the popular Spectra plugin (formerly Ultimate Addons for Gutenberg), trusted by over 1 million WordPress users.
+**Spectra** is the next generation of blocks from the team behind the popular Spectra plugin (formerly Ultimate Addons for Gutenberg - UAGB), trusted by over 1 million WordPress users.
 
 Built from the ground up using modern WordPress architecture including the Interactivity API, Spectra delivers lightweight, performance-focused blocks that integrate natively with the WordPress block editor.
 
@@ -89,4 +89,4 @@ You can report bugs or suggest features through the WordPress.org support forums
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release of Spectra - WordPress Gutenberg Blocks. Start building beautiful websites with modern Gutenberg blocks!
+Initial release of Spectra. Start building beautiful websites with modern blocks for the block editor!
