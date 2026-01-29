@@ -32,6 +32,14 @@ module.exports = [
 				entries[ `styles/${ name }` ] = path.resolve( __dirname, file );
 			} );
 
+			// Get all extension files (JS and SCSS).
+			const extensionFiles = glob.sync( './src/extensions/**/*.{js,scss}' );
+
+			extensionFiles.forEach( ( file ) => {
+				const name = file.replace( './src/extensions/', '' ).replace( /\.(js|scss)$/, '' );
+				entries[ `extensions/${ name }` ] = path.resolve( __dirname, file );
+			} );
+
 			// Return the modified entries.
 			return entries;
 		},
