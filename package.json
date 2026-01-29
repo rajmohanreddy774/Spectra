@@ -35,6 +35,9 @@
 		"@wordpress/scripts": "^30.10.0",
 		"del-cli": "^6.0.0",
 		"grunt": "^1.6.1",
+		"grunt-contrib-clean": "^2.0.1",
+		"grunt-contrib-compress": "^2.0.0",
+		"grunt-contrib-copy": "^1.0.0",
 		"grunt-wp-i18n": "^1.0.4"
 	}
 }
